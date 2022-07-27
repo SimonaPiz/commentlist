@@ -20,9 +20,9 @@ const CommentItemDiv = styled.div`
   margin-bottom: 10px;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 10px 0;
   background: linear-gradient(
-    120deg,
-    rgba(248, 248, 254, 0.95),
-    rgba(250, 250, 250, 0.95)
+   120deg,
+   rgba(248, 248, 254, 0.95),
+   rgba(250, 250, 250, 0.95)
   );
   border-radius: 48px;
 `;
@@ -32,7 +32,7 @@ const AvatarDiv = styled.div`
   position: relative;
   overflow: hidden;
   height: 48px;
-  widht: 48px;
+  width: 48px;
   margin-right: 14px;
   background: #dfecf2;
   border-radius: 48px;
@@ -75,15 +75,15 @@ export default function CommentList({ loading, comments, totalCount }) {
     <>
     <GlobalStyle/>
     <CommentListDiv>
-      {comments.map(({text, author: { name, avatar}}) => (
+      {comments.map(({ text, author: { name, avatar } }) => (
         <CommentItemDiv key={`comment_${name}`}>
           <AvatarDiv>
             <AvatarImg src={avatar} />
           </AvatarDiv>
           <MessageDiv>
-            <AuthorSpan>{name}</AuthorSpan>
+            <AuthorSpan>{name}</AuthorSpan> <TextSpan>{text}</TextSpan>
           </MessageDiv>
-        </CommentItemDiv>        
+        </CommentItemDiv>
       ))}
     </CommentListDiv>
     </>
